@@ -17,11 +17,11 @@ import java.util.HashMap;
  * <p>
  * Project Name: OCSF (Object Client-Server Framework)
  * <p>
- * 
+ *
  * @author Dr Robert Lagani&egrave;re
  * @author Dr Timothy C. Lethbridge
  * @author Fran&ccedil;ois B&eacute;langer
- * @author Paul Holden3
+ * @author Paul Holden
  * @version February 2001 (2.12)
  */
 public class ConnectionToClient extends Thread {
@@ -35,7 +35,7 @@ public class ConnectionToClient extends Thread {
 	/**
 	 * Sockets are used in the operating system as channels of communication
 	 * between two processes.
-	 * 
+	 *
 	 * @see java.net.Socket
 	 */
 	private Socket				clientSocket;
@@ -64,11 +64,12 @@ public class ConnectionToClient extends Thread {
 	 */
 	private HashMap				savedInfo	= new HashMap(10);
 
+
 	// CONSTRUCTORS *****************************************************
 
 	/**
 	 * Constructs a new connection to a client.
-	 * 
+	 *
 	 * @param group
 	 *            the thread groupSystem.out.println("Client at "+ client +
 	 *            "connected"); that contains the connections.
@@ -108,7 +109,7 @@ public class ConnectionToClient extends Thread {
 
 	/**
 	 * Sends an object to the client.
-	 * 
+	 *
 	 * @param msg
 	 *            the message to be sent.
 	 * @exception IOException
@@ -133,7 +134,7 @@ public class ConnectionToClient extends Thread {
 	/**
 	 * Closes the client. If the connection is already closed, this call has no
 	 * effect.
-	 * 
+	 *
 	 * @exception IOException
 	 *                if an error occurs when closing the socket.
 	 */
@@ -151,7 +152,7 @@ public class ConnectionToClient extends Thread {
 
 	/**
 	 * Returns the address of the client.
-	 * 
+	 *
 	 * @return the client's Internet address.
 	 */
 	final public InetAddress getInetAddress() {
@@ -160,7 +161,7 @@ public class ConnectionToClient extends Thread {
 
 	/**
 	 * Returns a string representation of the client.
-	 * 
+	 *
 	 * @return the client's description.
 	 */
 	public String toString() {
@@ -171,7 +172,7 @@ public class ConnectionToClient extends Thread {
 	/**
 	 * Saves arbitrary information about this client. Designed to be used by
 	 * concrete subclasses of AbstractServer. Based on a hash map.
-	 * 
+	 *
 	 * @param infoType
 	 *            identifies the type of information
 	 * @param info
@@ -181,10 +182,11 @@ public class ConnectionToClient extends Thread {
 		savedInfo.put(infoType, info);
 	}
 
+
 	/**
 	 * Returns information about the client saved using setInfo. Based on a hash
 	 * map.
-	 * 
+	 *
 	 * @param infoType
 	 *            identifies the type of information
 	 */
@@ -229,7 +231,7 @@ public class ConnectionToClient extends Thread {
 
 	/**
 	 * Closes all connection to the server.
-	 * 
+	 *
 	 * @exception IOException
 	 *                if an I/O error occur when closing the connection.
 	 */
